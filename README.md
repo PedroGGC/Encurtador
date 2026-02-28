@@ -1,59 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🔗 Encurtador de Links - Laravel 11
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Livewire](https://img.shields.io/badge/Livewire-3-FB70A9?style=for-the-badge&logo=livewire&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+![Oracle Cloud](https://img.shields.io/badge/Oracle_Cloud-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 
-## About Laravel
+Um moderno e rápido encurtador de links construído com a última versão do Laravel 11, Breeze, Tailwind CSS e banco de dados MySQL para alta performance. Inclui geração instantânea de QR Code e análises em tempo real, além de deploy otimizado para Oracle Cloud ARM.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Encurtamento Rápido:** URLs amigáveis com 6 caracteres randômicos via arquitetura leve.
+- **Geração de QR Code:** Suporte integrado a QR Codes (`simple-qrcode`) por link.
+- **Analytics Nativo:** Controle de total de cliques e último acesso integrado diretamente por link.
+- **Admin Dashboard:** TALL Stack (Tailwind, Alpine, Livewire, Laravel). Estatísticas detalhadas de links através de um dashboard interativo (Sem page reloads).
+- **Segurança (Breeze Auth):** Sistema completo de autenticação e proteção garantindo privacidade aos links administrativos.
+- **Rate Limiting:** API protegida no padrão limitando requisições abusivas.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Tech Stack
 
-## Learning Laravel
+- **Backend:** Laravel 11, PHP 8.2+
+- **Frontend:** Tailwind CSS, Blade Templates, Livewire 3
+- **Database:** MySQL
+- **Dependências:** `simplesoftwareio/simple-qrcode`, `laravel/breeze`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🚀 Como Rodar Localmente
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Clone o repositório:**
 
-## Laravel Sponsors
+    ```bash
+    git clone https://github.com/SEU_USUARIO/laravel-link-shortener.git
+    cd laravel-link-shortener
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. **Instale dependências do Composer e NPM:**
 
-### Premium Partners
+    ```bash
+    composer install
+    npm install && npm run build
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. **Configure as Variáveis de Ambiente:**
 
-## Contributing
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    > Certifique-se de configurar o banco de dados `MySQL` em seu `.env`. Caso deseje facilitar testes locais, mude `DB_CONNECTION=sqlite`.
 
-## Code of Conduct
+4. **Prepare o Banco de Dados:**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    php artisan migrate --seed
+    ```
 
-## Security Vulnerabilities
+    _O Seeder irá gerar um usuário super admin (`admin@example.com` / `password`) com alguns links artificiais._
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. **Inicie o servidor de desenvolvimento:**
+    ```bash
+    php artisan serve
+    ```
 
-## License
+## ☁️ Deploy Oracle Cloud (Free Tier ARM)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Este projeto acompanha um script bash completo e otimizado para deploy 1-click automático direto nas instâncias Ubuntu (ARM) da Oracle Cloud Free Tier.
+
+**Executando no servidor root remoto:**
+
+```bash
+chmod +x deploy-oracle.sh
+./deploy-oracle.sh
+```
+
+_(O script cuida da instalação do `php8.2`, `composer`, `mysql`, chaves seguras e setup do `apache2` em apenas um comando)._
+
+## 📖 API
+
+Pode ser integrado programaticamente usando o endpoint seguro:
+
+**POST:** `/api/shorten`
+
+- Autenticação opcional.
+- Request Body: `{"url": "https://google.com"}`
+- Responses: Recebe string JSON contendo a full short url gerada, url original. Limitado à cota do Throttle (`10req/min` default).
+
+---
+
+_Construído como caso de estudo/portfólio de engenharia de software fullstack._
