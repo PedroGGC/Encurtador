@@ -1,4 +1,4 @@
-# 🔗 Encurtador de Links - Laravel 11
+# Encurtador de Links - Laravel 11
 
 ![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -8,7 +8,7 @@
 
 Um moderno e rápido encurtador de links construído com a última versão do Laravel 11, Breeze, Tailwind CSS e banco de dados MySQL para alta performance. Inclui geração instantânea de QR Code e análises em tempo real, além de deploy otimizado para Oracle Cloud ARM.
 
-## ✨ Features
+##  Features
 
 - **Encurtamento Rápido:** URLs amigáveis com 6 caracteres randômicos via arquitetura leve.
 - **Geração de QR Code:** Suporte integrado a QR Codes (`simple-qrcode`) por link.
@@ -17,14 +17,14 @@ Um moderno e rápido encurtador de links construído com a última versão do La
 - **Segurança (Breeze Auth):** Sistema completo de autenticação e proteção garantindo privacidade aos links administrativos.
 - **Rate Limiting:** API protegida no padrão limitando requisições abusivas.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend:** Laravel 11, PHP 8.2+
 - **Frontend:** Tailwind CSS, Blade Templates, Livewire 3
 - **Database:** MySQL
 - **Dependências:** `simplesoftwareio/simple-qrcode`, `laravel/breeze`
 
-## 🚀 Como Rodar Localmente
+## Como Rodar Localmente
 
 1. **Clone o repositório:**
 
@@ -62,7 +62,7 @@ Um moderno e rápido encurtador de links construído com a última versão do La
     php artisan serve
     ```
 
-## ☁️ Deploy Oracle Cloud (Free Tier ARM)
+## Deploy Oracle Cloud (Free Tier ARM)
 
 Este projeto acompanha um script bash completo e otimizado para deploy 1-click automático direto nas instâncias Ubuntu (ARM) da Oracle Cloud Free Tier.
 
@@ -75,7 +75,7 @@ chmod +x deploy-oracle.sh
 
 _(O script cuida da instalação do `php8.2`, `composer`, `mysql`, chaves seguras e setup do `apache2` em apenas um comando)._
 
-## 📖 API
+## API
 
 Pode ser integrado programaticamente usando o endpoint seguro:
 
