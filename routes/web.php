@@ -11,7 +11,7 @@ Route::post('/shorten', [ShortenController::class, 'store'])->name('shorten');
 
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])
     ->middleware(['auth', 'verified'])
-    ->name('admin.dashboard');
+    ->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
